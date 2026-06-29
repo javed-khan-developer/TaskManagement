@@ -13,3 +13,4 @@ class Task(Base):
     description = Column(String)
     status = Column(String, default="Pending")
     user_id = Column(Integer, ForeignKey("users.id"))
+    priority = Column(String, default="Medium")
