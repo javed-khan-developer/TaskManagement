@@ -1,16 +1,38 @@
-import google.generativeai as genai
+from google import genai
 from config import GEMINI_API_KEY
 
 
 class AiService:
 
     def __init__(self):
-        genai.configure(api_key=GEMINI_API_KEY)
-        self.client = genai
+
+        self.client = genai.Client(
+            api_key=GEMINI_API_KEY
+        )
+
+        self.messages = []
 
     def chat(self, message: str):
-        
-            model = genai.GenerativeModel('gemini-2.5-flash')
-            response = model.generate_content(message)
-            return response.text
-        
+
+        self.messages.append(
+            {
+                "role": "user",
+                "parts": [{"text": message}]
+            }
+        )
+
+        response = self.client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=self.messages
+        )
+
+        ai_reply = response.text
+
+        self.messages.append(
+            {
+                "role": "model",
+                "parts": [{"text": ai_reply}]
+            }
+        )
+
+        return ai_reply
