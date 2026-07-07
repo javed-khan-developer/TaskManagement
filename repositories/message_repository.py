@@ -19,7 +19,7 @@ class MessageRepository:
         
         db.add(message)
         db.commit()
-        db.refresh()
+        db.refresh(message)
 
         return message
     

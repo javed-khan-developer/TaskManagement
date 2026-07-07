@@ -17,7 +17,7 @@ class ChatRepository:
         
         db.add(chat)
         db.commit()
-        db.refresh()
+        db.refresh(chat)
 
         return chat
     
