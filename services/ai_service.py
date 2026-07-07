@@ -12,12 +12,12 @@ class AiService:
 
         self.messages = []
 
-    def chat(self, message: str):
+    def chat(self, messages: list):
 
         self.messages.append(
             {
                 "role": "user",
-                "parts": [{"text": message}]
+                "parts": [{"text": messages}]
             }
         )
 
