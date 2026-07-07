@@ -6,3 +6,4 @@ passlib[bcrypt]
 bcrypt==4.1.1
 python-jose[cryptography]
 python-dotenv
+google-genai
