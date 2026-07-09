@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from fastapi import UploadFile
 from fastapi import BackgroundTasks
 import os
+from utils.logger import logger
 
 router = APIRouter()
 
@@ -24,4 +25,4 @@ async def uploadFile(backgroundTask: BackgroundTasks, file: UploadFile):
 
 def process_file(filename: str):
 
-    print(f"Processing {filename}")
+    logger.info(f"Processing {filename}")

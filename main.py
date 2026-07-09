@@ -8,6 +8,7 @@ from routers.file_router import router as file_router
 from routers.chat_router import router as chat_router
 from fastapi import Request
 import time
+from utils.logger import logger
 
 app = FastAPI()
 
@@ -31,7 +32,7 @@ async def log_requests(
 
     end = time.time()
 
-    print(
+    logger.info(
         f"{request.method} {request.url.path} took {end-start:.4f}s"
     )
 

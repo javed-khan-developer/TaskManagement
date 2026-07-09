@@ -1,16 +1,14 @@
 from jose import jwt,JWTError
 from datetime import datetime
 from datetime import timedelta
-from dotenv import load_dotenv
-import os
+from core.config import settings
 
-load_dotenv()
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = settings.SECRET_KEY
 
-ALGORITHM = os.getenv("ALGORITHM")
+ALGORITHM = settings.ALGORITHM
 
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
+ACCESS_TOKEN_EXPIRE_MINUTES = int(settings.ACCESS_TOKEN_EXPIRE_MINUTES)
 
 
 def create_access_token(

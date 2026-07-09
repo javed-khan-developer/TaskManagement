@@ -1,15 +1,15 @@
 from google import genai
-from config import GEMINI_API_KEY
+from core.config import settings
 
 
 class AiService:
 
     def __init__(self):
-        self.client = genai.Client(api_key=GEMINI_API_KEY)
+        self.client = genai.Client(api_key=settings.GEMINI_API_KEY)
         self.messages = []
 
     def chat(self, messages: list):
-        if not GEMINI_API_KEY:
+        if not settings.GEMINI_API_KEY:
             return "Gemini API key is not configured."
 
         prompt_text = "\n".join(

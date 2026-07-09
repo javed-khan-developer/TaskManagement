@@ -5,6 +5,7 @@ from repositories.user_repository import UserRepository
 from utils.security import hash_password
 from utils.security import verify_password
 from utils.jwt_helper import create_access_token
+from utils.logger import logger
 
 class UserService:
 
@@ -29,7 +30,7 @@ class UserService:
             )
         hashed_password = hash_password(password)
 
-        print("HASH:", hashed_password)  
+        logger.info("HASH:", hashed_password)  
 
         return self.repo.create_user(
             db,
