@@ -6,7 +6,7 @@ from fastapi.security import HTTPAuthorizationCredentials
 
 from sqlalchemy.orm import Session
 
-from dependencies import get_db
+from db_dependencies import get_db
 
 from repositories.user_repository import UserRepository
 

@@ -3,7 +3,7 @@ from fastapi import Depends
 
 from sqlalchemy.orm import Session
 
-from dependencies import get_db
+from db_dependencies import get_db
 
 from services.chat_service import ChatService
 

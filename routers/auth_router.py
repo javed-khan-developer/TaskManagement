@@ -4,7 +4,7 @@ from fastapi import HTTPException
 
 from sqlalchemy.orm import Session
 
-from dependencies import get_db
+from db_dependencies import get_db
 from schemas.login_schema import LoginRequest
 from services.user_service import UserService
 from auth_dependency import get_current_user
