@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from fastapi import status
 from repositories.user_repository import UserRepository
+from schemas.api_response import ApiResponse
 from utils.security import hash_password
 from utils.security import verify_password
 from utils.jwt_helper import create_access_token
@@ -71,4 +72,8 @@ class UserService:
             "email": user.email
         }
         )   
-        return token
+        return ApiResponse(
+            success=True,
+            message="Login Successfull",
+            data= token
+        )

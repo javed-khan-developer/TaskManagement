@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 
 from models.chat import Chat
+from schemas.api_response import ApiResponse
 
 class ChatRepository:
 
@@ -19,7 +20,11 @@ class ChatRepository:
         db.commit()
         db.refresh(chat)
 
-        return chat
+        return ApiResponse(
+            success= True,
+            message="Chat Created",
+            data= chat
+        )
     
     def get_chat_by_id(
             self,

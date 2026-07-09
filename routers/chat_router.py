@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 
 from db_dependency import get_db
 
+from schemas.api_response import ApiResponse
 from services.chat_service import ChatService
 
 from schemas.chat_schema import ChatCreate
@@ -68,6 +69,11 @@ def send_message(
         request.message
     )
 
-    return {
-        "reply": reply
-    }
+    return ApiResponse(
+        success=True,
+        message="Message Sent",
+        data=
+        {
+            "reply":reply
+        }
+    )

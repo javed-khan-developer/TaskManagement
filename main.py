@@ -9,8 +9,22 @@ from routers.chat_router import router as chat_router
 from fastapi import Request
 import time
 from utils.logger import logger
-
+from fastapi import HTTPException
+from exceptions.handlers import (
+    http_exception_handler,
+    generic_exception_handler,
+)
 app = FastAPI()
+
+app.add_exception_handler(
+    HTTPException,
+    http_exception_handler
+)
+
+app.add_exception_handler(
+    Exception,
+    generic_exception_handler
+)
 
 app.add_middleware(
     CORSMiddleware,
