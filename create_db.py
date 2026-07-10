@@ -1,7 +1,7 @@
 
 # create_db.py
 
-from database import engine
+from core.database import engine
 from models.user import Base
 from models.task import Task
 

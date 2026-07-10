@@ -4,10 +4,10 @@ from fastapi import HTTPException
 
 from sqlalchemy.orm import Session
 
-from db_dependency import get_db
+from dependencies.database import get_db
 from schemas.login_schema import LoginRequest
 from services.user_service import UserService
-from auth_dependency import get_current_user
+from dependencies.auth import get_current_user
 
 
 router = APIRouter()

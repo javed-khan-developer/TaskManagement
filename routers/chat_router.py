@@ -3,7 +3,7 @@ from fastapi import Depends
 
 from sqlalchemy.orm import Session
 
-from db_dependency import get_db
+from dependencies.database import get_db
 
 from schemas.api_response import ApiResponse
 from services.chat_service import ChatService
@@ -11,7 +11,7 @@ from services.chat_service import ChatService
 from schemas.chat_schema import ChatCreate
 from schemas.chat_schema import MessageRequest
 
-from auth_dependency import get_current_user
+from dependencies.auth import get_current_user
 from models.user import User
 
 router = APIRouter(

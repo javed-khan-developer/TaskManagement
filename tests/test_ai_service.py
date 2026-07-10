@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 import httpx
 from openai import RateLimitError
 
-from services.ai_service import AiService
+from services.ai.gemini_service import AiService
 
 
 def test_chat_returns_fallback_on_rate_limit():

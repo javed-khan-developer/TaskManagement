@@ -2,8 +2,8 @@ from fastapi import APIRouter
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
-from db_dependency import get_db
-from auth_dependency import get_current_user
+from dependencies.database import get_db
+from dependencies.auth import get_current_user
 
 from schemas.task_schema import(TaskCreate, TaskUpdate, TaskResponse)
 

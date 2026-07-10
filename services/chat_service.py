@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 
 from repositories.chat_repository import ChatRepository
 from repositories.message_repository import MessageRepository
-from services.ai_service import AiService
+from services.ai.gemini_service import AiService
 
 
 class ChatService:
