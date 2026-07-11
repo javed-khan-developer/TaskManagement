@@ -66,6 +66,7 @@ def send_message(
     reply = service.send_message(
         db,
         chat_id,
+        user_id=current_user.id,
         request.message
     )
 

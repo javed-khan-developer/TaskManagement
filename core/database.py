@@ -5,7 +5,7 @@ from core.config import settings
 from utils.logger import logger
 
 DATABASE_URL = settings.DATABASE_URL
-logger.info("DATABASE_URL:", DATABASE_URL)
+logger.info(f"DATABASE_URL: {DATABASE_URL}")
 engine = create_engine(
     DATABASE_URL
 )

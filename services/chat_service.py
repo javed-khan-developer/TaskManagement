@@ -17,10 +17,11 @@ class ChatService:
     def get_user_chats(self, db: Session, user_id: int):
         return self.chat_repo.get_user_chats(db, user_id)
 
-    def send_message(self, db: Session, chat_id: int, message: str):
+    def send_message(self, db: Session, chat_id: int, user_id: int, message: str):
         self.message_repo.create_message(
             db=db,
             chat_id=chat_id,
+            user_id=user_id,
             role="user",
             content=message,
         )

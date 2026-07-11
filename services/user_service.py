@@ -31,7 +31,7 @@ class UserService:
             )
         hashed_password = hash_password(password)
 
-        logger.info("HASH:", hashed_password)  
+        logger.info(f"HASH:, {hashed_password}")  
 
         return self.repo.create_user(
             db,
